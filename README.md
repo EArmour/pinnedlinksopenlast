@@ -1,0 +1,2 @@
+# Pinned Links Open Last
+This is a Firefox extension to open links from pinned tabs on the far right instead of left. I tend to like my tabs in roughly chronological order, so it annoyed me when opening links from pinned tabs such as Twitter or Gmail, that Firefox chose to open the new tabs next to the pinned ones, which is to say at the very beginning of the tab list. This resulted in a lot of scrolling back and forth and things getting out of order. All this does is, whenver a pinned tab is active, all newly opened tabs are forced to the very end of the tab list.

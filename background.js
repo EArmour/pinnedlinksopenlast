@@ -1,30 +1,3 @@
-/**
-const windowIdPinnedTabActiveMap = new Map();
-
-function setCurrentWindowTabStatus(windowId, tabIsPinned) {
-	windowIdPinnedTabActiveMap.set(windowId, tabIsPinned);
-}
-
-function initializeCurrentTabStatus() {
-    const query = {
-        active: true,
-        currentWindow: true,
-    };
-    browser.tabs.query(query).then(
-        ([tab]) => {
-            if (!tab) {
-                return;
-            }
-            setCurrentWindowTabStatus(tab.windowId, tab.pinned);
-        }
-    );
-}
-
-function handleTabActivated(activeInfo) {
-	activeTab = await browser.tabs.get(activeInfo.tabId);
-    setCurrentWindowTabStatus(activeInfo.windowId, activeTab.pinned);
-}
-**/
 let activeTabIsPinned = false;
 
 function initializeCurrentTabStatus() {
