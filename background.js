@@ -1,11 +1,7 @@
 let activeTabIsPinned = false;
 
 function initializeCurrentTabStatus() {
-    const query = {
-        active: true,
-        currentWindow: true,
-    };
-    browser.tabs.query(query).then(
+    browser.tabs.query({active: true, currentWindow: true}).then(
         ([tab]) => {
             if (!tab) {
                 return;
@@ -16,7 +12,7 @@ function initializeCurrentTabStatus() {
 }
 
 async function handleTabActivated(activeInfo) {
-	activeTab = await browser.tabs.get(activeInfo.tabId);
+    activeTab = await browser.tabs.get(activeInfo.tabId);
     activeTabIsPinned = activeTab.pinned;
 }
 
@@ -27,7 +23,7 @@ browser.tabs.onActivated.addListener(handleTabActivated);
 browser.tabs.onCreated.addListener(moveTab);
 
 function moveTab(newTab) {
-	if (activeTabIsPinned) {
-		browser.tabs.move(newTab.id, {index: -1});
-	}
+    if (activeTabIsPinned) {
+        browser.tabs.move(newTab.id, {index: -1});
+    }
 }
