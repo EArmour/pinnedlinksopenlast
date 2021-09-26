@@ -1,12 +1,13 @@
 {
   "manifest_version": 2,
   "name": "Links In Pinned Tabs Open Last",
-  "version": "1.1",
+  "version": "1.2",
   "description": "When links in a pinned tab are opened in a new tab, that tab is opened on the far right of the tab list instead of next to the pinned tab on the left",
   "homepage_url": "https://github.com/EArmour/pinnedlinksopenlast",
-
   "background": {
-      "scripts": ["background.js"]
+    "scripts": [
+      "background.js"
+    ]
   },
   "permissions": [
     "tabs"
