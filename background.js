@@ -1,3 +1,5 @@
+const UNINITIALIZED_TAB_URL = "about:blank";
+
 let activeTabIsPinned = false;
 let tabIdsToMove = [];
 let movedTabIds = [];
@@ -62,6 +64,10 @@ async function markTab(newTab) {
 }
 
 async function recreateTab(tabId, changeInfo, tabInfo) {
+    if (changeInfo.url == UNINITIALIZED_TAB_URL) {
+        return;
+    }
+    
     const tabIndex = tabIdsToMove.indexOf(tabId);
     if (tabIndex !== -1 && !movedTabIds.includes(tabId)) {
         const createdTab = await browser.tabs.create({ active: false, url: changeInfo.url, index: 9999 });
